@@ -181,6 +181,7 @@ class Notification(models.Model):
     class Meta:
         ordering = ('-timestamp', )
         app_label = 'notifications'
+        index_together = ['unread', 'deleted']
 
     def __unicode__(self):
         ctx = {
